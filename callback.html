@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Callback Spotify</title>
+</head>
+<body>
+  <h1>Traitement...</h1>
+  <p id="result"></p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if (code) {
+      document.getElementById("result").innerText = "Code reçu : " + code;
+      // ⚠ Pour échanger ce code contre un token, il faudra le faire côté serveur (sécurité)
+    } else {
+      document.getElementById("result").innerText = "Erreur : pas de code reçu.";
+    }
+  </script>
+</body>
+</html>
